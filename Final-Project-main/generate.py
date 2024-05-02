@@ -22,7 +22,7 @@ def load_model(model_path):
     return G_model
 
 def generate(model,ir_path, vis_path, result,  index,  mode):
-    result = "results\\Original"
+    result = "results\\Test6"
     ir_img = utils.get_test_images(ir_path, mode=mode)
     vis_img = utils.get_test_images(vis_path, mode=mode)
     ir_img = ir_img.cuda()

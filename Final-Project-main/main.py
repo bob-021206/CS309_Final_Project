@@ -7,8 +7,8 @@ import torch
 import os
 from Models import Generator
 
-flag = 0
-if flag == 1:
+flag = 1
+if flag == 0:
     IS_TRAINING = True
 else:
     IS_TRAINING = False
@@ -38,7 +38,7 @@ def main():
     else:
         print("\nBegin to generate pictures ...\n")
 
-        model_name = 'Final_G_Epoch_13.model'  #model_name = 'Final_G_Epoch_13.model'
+        model_name = 'Test_G_Epoch_13.model'  #model_name = 'Final_G_Epoch_13.model'
 
         test_imgs_path= "./test_imgs/tno/"
         print('TNO date set begin to test')

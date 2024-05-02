@@ -172,7 +172,7 @@ def list_images(directory):
 
 #BTSFusion新增
 def PixelIntensityDecision(latlrr_image,ir_image,vi_image):
-    mask = torch.where(latlrr_image > 30, 1, 0)
+    mask = torch.where(latlrr_image > 90, 1, 0)
     vi_mask = vi_image * mask
     ir_mask = ir_image * mask
     max_input_pixel_mask = torch.max(vi_mask, ir_mask)

@@ -15,11 +15,11 @@ class g_content_loss(nn.Module):
         self.L1_loss = torch.nn.L1Loss(reduction="mean")
         self.gradient=gradient()
     def forward(self, img_ir, img_vi, img_fusion):
-        lambda_2=1
-        lambda_3=10
-        image_vi_grad = self.gradient(img_vi)
-        image_ir_grad = self.gradient(img_ir)
-        image_fusion_grad = self.gradient(img_fusion)
+        # lambda_2=1
+        # lambda_3=10
+        # image_vi_grad = self.gradient(img_vi)
+        # image_ir_grad = self.gradient(img_ir)
+        # image_fusion_grad = self.gradient(img_fusion)
         # image_max_grad = torch.round((image_vi_grad + image_ir_grad) // (
         #         torch.abs(image_vi_grad + image_ir_grad) + 0.0000000001)) * torch.max(
         #     torch.abs(image_vi_grad), torch.abs(image_ir_grad))
@@ -42,9 +42,9 @@ class g_content_loss(nn.Module):
 		# total loss
         total_loss = loss1_value + loss2_value
 
-        content_loss = loss1_value
-        intensity_loss = loss2_value
-        texture_loss = total_loss
+        content_loss = total_loss
+        intensity_loss = loss1_value
+        texture_loss = loss2_value
 
 
 
